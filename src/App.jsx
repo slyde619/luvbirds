@@ -2,10 +2,10 @@ import Countdown from "./components/Countdown";
 import EventDetails from "./components/EventDetails";
 import Footer from "./components/Footer";
 import Gallery from "./components/Gallery";
+import GoodwillMessage from "./components/GoodwillMessage";
 import Hero from "./components/Hero";
 import LoveStory from "./components/LoveStory";
 import NavBar from "./components/Navbar";
-import RSVP from "./components/RSVP";
 
 
 function App() {
@@ -18,7 +18,7 @@ function App() {
         <LoveStory />
         <Gallery />
         <EventDetails />
-        <RSVP />
+        <GoodwillMessage />
       </main>
       <Footer />
     </div>
