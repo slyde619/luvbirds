@@ -1,9 +1,9 @@
-import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Sparkle } from 'lucide-react';
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Sparkle } from "lucide-react";
 
 function GoodwillMessage() {
-  const [formData, setFormData] = useState({ name: '', message: '' });
+  const [formData, setFormData] = useState({ name: "", message: "" });
   const [showModal, setShowModal] = useState(false);
 
   const handleChange = (e) => {
@@ -14,21 +14,21 @@ function GoodwillMessage() {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!formData.name || !formData.message) {
-      ['name', 'message'].forEach((field) => {
+      ["name", "message"].forEach((field) => {
         if (!formData[field]) {
           const el = document.getElementById(field);
-          el.classList.add('ring-rose-300');
-          setTimeout(() => el.classList.remove('ring-rose-300'), 600);
+          el.classList.add("ring-rose-300");
+          setTimeout(() => el.classList.remove("ring-rose-300"), 600);
         }
       });
       return;
     }
-    const phone = '+2348105195602'; // Replace with host's WhatsApp number (international format)
-    const text = `Goodwill Message from ${formData.name}: ${formData.message}`;
+    const phone = "+2347041238582";
+    const text = `Goodwill Message from ${formData.name}: \n\n${formData.message}`;
     const url = `https://wa.me/${phone}?text=${encodeURIComponent(text)}`;
-    window.open(url, '_blank');
+    window.open(url, "_blank");
     setShowModal(true);
-    setFormData({ name: '', message: '' });
+    setFormData({ name: "", message: "" });
   };
 
   return (
@@ -49,15 +49,25 @@ function GoodwillMessage() {
                 <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-slate-900 font-playfair">
                   Goodwill Message
                 </h2>
-                <p className="mt-2 text-slate-600 text-sm">We’re so excited to celebrate with you. Send a message below.</p>
+                <p className="mt-2 text-slate-600 text-sm">
+                  We’re so excited to celebrate with you. Send a message below.
+                </p>
               </div>
               <div className="hidden sm:block">
-                <i data-lucide="calendar-heart" className="w-8 h-8 text-rose-400"></i>
+                <i
+                  data-lucide="calendar-heart"
+                  className="w-8 h-8 text-rose-400"
+                ></i>
               </div>
             </div>
             <div className="mt-6 space-y-5" aria-describedby="rsvp-hint">
               <div>
-                <label htmlFor="name" className="block text-sm text-slate-700 mb-1">Full Name</label>
+                <label
+                  htmlFor="name"
+                  className="block text-sm text-slate-700 mb-1"
+                >
+                  Full Name
+                </label>
                 <input
                   id="name"
                   name="name"
@@ -70,7 +80,12 @@ function GoodwillMessage() {
                 />
               </div>
               <div>
-                <label htmlFor="message" className="block text-sm text-slate-700 mb-1">Message</label>
+                <label
+                  htmlFor="message"
+                  className="block text-sm text-slate-700 mb-1"
+                >
+                  Message
+                </label>
                 <textarea
                   id="message"
                   name="message"
@@ -81,15 +96,40 @@ function GoodwillMessage() {
                   placeholder="Your RSVP or note for the couple?"
                 ></textarea>
               </div>
-              <p id="rsvp-hint" className="text-xs text-slate-500">
+              <p id="rsvp-hint" className="-mt-3 text-xs text-slate-500">
                 Message will open in WhatsApp. No data stored.
               </p>
               <div className="pt-2">
                 <button
                   onClick={handleSubmit}
-                  className="inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-medium bg-gradient-to-tr from-rose-300 to-amber-200 hover:from-rose-300/90 hover:to-amber-200/90 text-slate-900 shadow-lg shadow-rose-200/40 ring-1 ring-rose-200 hover:ring-rose-300 transition-all"
+                  className="inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-medium bg-gradient-to-tr from-rose-300 to-amber-200 hover:from-rose-300/90 hover:to-amber-200/90 text-slate-900 shadow-lg shadow-rose-200/40 ring-1 ring-rose-200 hover:ring-rose-300 transition-all cursor-pointer"
                 >
-                  <Sparkle size={16} /> Send Message
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="lucide lucide-send-icon lucide-send"
+                  >
+                    <motion.path
+                      initial={{ pathLength: 0 }}
+                      whileInView={{ pathLength: 1 }}
+                      transition={{ duration: 1.5, ease: "easeInOut" }}
+                      d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z"
+                    />
+                    <motion.path
+                      initial={{ pathLength: 0 }}
+                      whileInView={{ pathLength: 1 }}
+                      transition={{ duration: 1.5, ease: "easeInOut" }}
+                      d="m21.854 2.147-10.94 10.939"
+                    />
+                  </svg>{" "}
+                  Send Message
                 </button>
               </div>
             </div>
@@ -120,7 +160,10 @@ function GoodwillMessage() {
             >
               <div className="flex items-center gap-3">
                 <div className="h-10 w-10 rounded-full bg-emerald-50 ring-1 ring-emerald-100 flex items-center justify-center">
-                  <i data-lucide="check-circle-2" className="w-6 h-6 text-emerald-600"></i>
+                  <i
+                    data-lucide="check-circle-2"
+                    className="w-6 h-6 text-emerald-600"
+                  ></i>
                 </div>
                 <h3 className="text-xl font-medium tracking-tight text-slate-900 font-playfair">
                   Message Sent!
