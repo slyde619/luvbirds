@@ -1,14 +1,17 @@
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { useState, useEffect, useRef } from "react";
+import { motion, useScroll, useTransform, useInView } from "framer-motion";
 import { Sparkles } from "lucide-react";
-import { Diamond } from "lucide-react";
 
 function LoveStory() {
-  const [openPanel, setOpenPanel] = useState(null);
+  const [currentStory, setCurrentStory] = useState(0);
+  const containerRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start end", "end start"]
+  });
 
   const stories = [
     {
-      id: "panel-1",
       title: "How We Met",
       icon: (
         <svg
@@ -18,67 +21,87 @@ function LoveStory() {
           viewBox="0 0 24 24"
           fill="none"
           stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          class="lucide lucide-hand-heart-icon lucide-hand-heart"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          className="text-rose-500"
         >
-          <path d="M11 14h2a2 2 0 0 0 0-4h-3c-.6 0-1.1.2-1.4.6L3 16" />
-          <path d="m14.45 13.39 5.05-4.694C20.196 8 21 6.85 21 5.75a2.75 2.75 0 0 0-4.797-1.837.276.276 0 0 1-.406 0A2.75 2.75 0 0 0 11 5.75c0 1.2.802 2.248 1.5 2.946L16 11.95" />
-          <path d="m2 15 6 6" />
-          <path d="m7 20 1.6-1.4c.3-.4.8-.6 1.4-.6h4c1.1 0 2.1-.4 2.8-1.2l4.6-4.4a1 1 0 0 0-2.75-2.91" />
+          <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
         </svg>
       ),
-      content:
-        "We crossed paths at a cozy bookshop, reaching for the same novel. A shared smile led to coffee, then conversations that stretched for hours, and a feeling that we had found home in each other.",
+      content: [
+        "Every love journey comes with a story and ours isn't the conventional kind of story. We first cross paths in 2019 in the most unexpected way. I had arrived at his school (AKSU) for a quiz competition and little did I know I would meet the man that will capture my heart years later. We were in the same department and as the vice president of the department, he was one of the organizers of the interschool competition.",
+        "After the event, we had a little chit chat and exchanged contacts.. (We just friendzone each other and turn to status viewers till I lost his contact). Fast forward to six years later, I had completely forgotten about him even though we were still friends on Facebook. He had earlier reached out to my best friend in March to confirm if I was single and she tally meant to be.",
+        "I must say it's been an amazing 5 months with him, 5 months of love. 6 Years ago, we were just random strangers who just met once, 5 months ago, we became acquaintance, 5 Months down the line, we are lovers, and soon going to do forever... Most times we find love in the most unexpected ways and I'm glad I would be doing this life journey with my lover"
+      ]
     },
     {
-      id: "panel-2",
       title: "Our First Date",
-      icon: <Sparkles />,
-      content:
-        "We wandered through the city at dusk, sharing stories, laughter, and a scoop of pistachio gelato. Every step felt like a promise that the best was yet to come.",
-    },
-    {
-      id: "panel-3",
-      title: "The Proposal",
-      icon: <Diamond />,
-      content:
-        "Under a canopy of twinkling lights, with the soft sound of waves, Alex asked, and Emma said yes—surrounded by the quiet magic of a moment that felt perfectly ours.",
-    },
+      icon: <Sparkles className="text-rose-500" />,
+      content: [
+        "He fixed a date for us to meet on 1st May, 2025 and that was a game changer. We met again for the second time in 6 years, and I must say, it was love at second sight indeed.. The spark was undeniable and when he finally asked me out, I already knew I would give him a chance.",
+        "Truly, love has a way of finding it's way back at the end. I do not like to rush into things but with him it was why delay what is actually meant to be. I must say it's been an amazing 5 months with him, 5 months of love. 6 Years ago, we were just random strangers who just met once, 5 months ago, we became acquaintance, 5 Months down the line, we are lovers, and soon going to do forever... Most times we find love in the most unexpected ways and I'm glad I would be doing this life journey with my lover."
+      ]
+    }
   ];
+
+  useEffect(() => {
+    return scrollYProgress.on("change", (latest) => {
+      const newStory = Math.min(Math.floor(latest * stories.length), stories.length - 1);
+      setCurrentStory(newStory);
+    });
+  }, [scrollYProgress, stories.length]);
 
   return (
     <motion.section
-      initial={{ opacity: 0, y: 16 }}
+      initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.7 }}
-      viewport={{ once: true }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+      viewport={{ once: true, margin: "-100px" }}
       id="story"
-      className="relative"
+      className="relative min-h-screen bg-gradient-to-b from-rose-50/30 to-white"
       aria-label="Our Love Story"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-16 md:pt-20">
         <div className="flex flex-col md:flex-row gap-10 items-center md:items-start">
+          {/* Header Section */}
           <div className="md:w-5/12 text-center md:text-left">
-            <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-slate-900 font-playfair">
+            <motion.h2 
+              className="text-4xl md:text-5xl font-bold tracking-tight text-slate-900"
+              style={{ fontFamily: 'serif' }}
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
               Our Love Story
-            </h2>
-            <p className="mt-3 text-slate-600">
+            </motion.h2>
+            <motion.p 
+              className="mt-4 text-lg text-slate-600"
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+            >
               A few moments from a lifetime of little miracles.
-            </p>
-            <span className="flex items-center justify-center md:items-start md:justify-start">
+            </motion.p>
+            
+            {/* Decorative Element */}
+            <motion.div 
+              className="flex items-center justify-center md:justify-start mt-6"
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+            >
               <svg
                 width="130"
                 height="36"
                 viewBox="0 0 130 36"
                 fill="none"
-                className="mt-6 text-red-500/60"
+                className="text-rose-400"
               >
                 <motion.path
                   initial={{ pathLength: 0 }}
                   whileInView={{ pathLength: 1 }}
-                  transition={{ duration: 1.5, ease: "easeInOut" }}
+                  transition={{ duration: 2, ease: "easeInOut", delay: 0.8 }}
                   d="M3 18c18-16 34-16 52 0 18 16 34 16 52 0"
                   stroke="currentColor"
                   strokeWidth="2.5"
@@ -86,68 +109,113 @@ function LoveStory() {
                   strokeDasharray="2 6"
                 />
                 <motion.path
-                  initial={{ pathLength: 0 }}
-                  whileInView={{ pathLength: 1 }}
-                  transition={{ duration: 1.5, ease: "easeOut" }}
+                  initial={{ pathLength: 0, scale: 0 }}
+                  whileInView={{ pathLength: 1, scale: 1 }}
+                  transition={{ duration: 1.5, ease: "easeOut", delay: 1.2 }}
                   d="M65 14c-1-4 4-7 7-3 2 2 1 5-2 7-2 2-3 2-5 4-2-2-3-2-5-4-3-2-4-5-2-7 3-4 8-1 7 3Z"
                   stroke="currentColor"
                   strokeWidth="2.5"
-                  fill="none"
+                  fill="currentColor"
                   strokeLinejoin="round"
+                  style={{ transformOrigin: "65px 18px" }}
                 />
               </svg>
-            </span>
+            </motion.div>
           </div>
 
-          <div className="md:w-7/12 space-y-4">
-            {stories.map((story) => (
-              <motion.article
-                key={story.id}
-                className="rounded-xl bg-white ring-1 ring-slate-200/70 p-4 sm:p-5 shadow-sm"
-                initial={{ opacity: 0, y: 16 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.7 }}
-                viewport={{ once: true }}
-              >
-                <button
-                  className="w-full cursor-pointer flex items-center justify-between gap-4"
-                  onClick={() =>
-                    setOpenPanel(openPanel === story.id ? null : story.id)
-                  }
-                  aria-expanded={openPanel === story.id}
-                  aria-controls={story.id}
-                >
-                  <div className="flex items-center gap-3">
-                    <div className="h-10 w-10 rounded-full bg-rose-50 ring-1 ring-rose-100 flex items-center justify-center">
-                      {story.icon}
-                    </div>
-                    <h3 className="text-lg sm:text-xl font-medium tracking-tight text-slate-900 font-playfair">
-                      {story.title}
-                    </h3>
-                  </div>
-                  <motion.i
-                    data-lucide="chevron-down"
-                    className="w-5 h-5 text-slate-500"
-                    animate={{ rotate: openPanel === story.id ? 180 : 0 }}
-                    transition={{ duration: 0.5 }}
-                  ></motion.i>
-                </button>
-                <AnimatePresence>
-                  {openPanel === story.id && (
-                    <motion.div
-                      id={story.id}
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: "auto", opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.5, ease: "easeOut" }}
-                      className="overflow-hidden"
+          {/* Stories Section */}
+          <div className="md:w-7/12" ref={containerRef}>
+            <div className="space-y-12">
+              {stories.map((story, index) => {
+                const isInView = useInView(containerRef, { 
+                  margin: "-20% 0px -20% 0px" 
+                });
+                
+                return (
+                  <motion.div
+                    key={index}
+                    className={`rounded-2xl bg-white/80 backdrop-blur-sm ring-1 ring-slate-200/70 p-8 shadow-lg transition-all duration-500 ${
+                      currentStory === index ? 'ring-rose-200 shadow-rose-100/50' : ''
+                    }`}
+                    initial={{ opacity: 0, y: 60, scale: 0.95 }}
+                    whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                    transition={{ 
+                      duration: 0.7, 
+                      delay: index * 0.2,
+                      ease: "easeOut"
+                    }}
+                    viewport={{ once: true, margin: "-50px" }}
+                    whileHover={{ 
+                      scale: 1.02,
+                      transition: { duration: 0.2 }
+                    }}
+                  >
+                    {/* Story Header */}
+                    <motion.div 
+                      className="flex items-center gap-4 mb-6"
+                      initial={{ opacity: 0, x: -20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.5, delay: index * 0.2 + 0.3 }}
                     >
-                      <p className="mt-4 text-slate-600">{story.content}</p>
+                      <motion.div 
+                        className="h-14 w-14 rounded-full bg-gradient-to-br from-rose-100 to-rose-200 ring-1 ring-rose-300/50 flex items-center justify-center shadow-sm"
+                        whileHover={{ rotate: 5, scale: 1.05 }}
+                        transition={{ type: "spring", stiffness: 400, damping: 17 }}
+                      >
+                        {story.icon}
+                      </motion.div>
+                      <h3 
+                        className="text-2xl md:text-3xl font-semibold tracking-tight text-slate-900"
+                        style={{ fontFamily: 'serif' }}
+                      >
+                        {story.title}
+                      </h3>
                     </motion.div>
-                  )}
-                </AnimatePresence>
-              </motion.article>
-            ))}
+                    
+                    {/* Story Content */}
+                    <div className="space-y-4">
+                      {story.content.map((paragraph, paragraphIndex) => (
+                        <motion.p 
+                          key={paragraphIndex}
+                          className="text-slate-700 leading-relaxed text-lg"
+                          initial={{ opacity: 0, y: 20 }}
+                          whileInView={{ opacity: 1, y: 0 }}
+                          transition={{ 
+                            duration: 0.8, 
+                            delay: index * 0.2 + paragraphIndex * 0.3 + 0.5,
+                            ease: "easeOut"
+                          }}
+                          viewport={{ once: true, margin: "-50px" }}
+                        >
+                          {paragraph}
+                        </motion.p>
+                      ))}
+                    </div>
+                  </motion.div>
+                );
+              })}
+            </div>
+            
+            {/* Progress Indicator */}
+            <motion.div 
+              className="mt-12 flex justify-center gap-3"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 1 }}
+            >
+              {stories.map((_, index) => (
+                <motion.div
+                  key={index}
+                  className={`h-3 w-3 rounded-full transition-all duration-300 ${
+                    currentStory === index 
+                      ? 'bg-rose-500 scale-125' 
+                      : 'bg-slate-300 hover:bg-slate-400'
+                  }`}
+                  whileHover={{ scale: 1.2 }}
+                  whileTap={{ scale: 0.9 }}
+                />
+              ))}
+            </motion.div>
           </div>
         </div>
       </div>
