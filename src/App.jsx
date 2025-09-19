@@ -6,6 +6,7 @@ import GoodwillMessage from "./components/GoodwillMessage";
 import Hero from "./components/Hero";
 import LoveStory from "./components/LoveStory";
 import NavBar from "./components/Navbar";
+import ProposalChat from "./components/Proposal";
 
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
       <main>
         <LoveStory />
         <Gallery />
+        <ProposalChat />
         <EventDetails />
         <GoodwillMessage />
       </main>

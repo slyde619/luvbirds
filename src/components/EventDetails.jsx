@@ -71,15 +71,15 @@ function EventDetails() {
           </div>
           <div className="rounded-2xl overflow-hidden ring-1 ring-slate-200 bg-white shadow-sm h-96 lg:h-120 2xl:h-full">
             <div class="w-full h-full">
-            <iframe
-                title="Google Map - Qua Iboe Church, Primary School"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3974.617904785419!2d7.865842777605179!3d5.002957094973457!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1067ff526dd58175%3A0x238b67ec4aa9231e!2sQua%20Iboe%20Church%20Primary%20School!5e0!3m2!1sen!2sng!4v1758130424063!5m2!1sen!2sng"
+              <iframe
+                title="Google Map - Q.I.C. Group School, Oku - Uyo"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3974.3916079299433!2d7.91240647579808!3d5.040084238620264!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x105d57194867917b%3A0xc8d919c5ff5d834d!2sQ.I.C.%20Group%20School%2C%20Oku%20-%20Uyo!5e0!3m2!1sen!2sng!4v1758315358382!5m2!1sen!2sng"
                 class="w-full h-full border-0"
                 allowfullscreen=""
                 loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade">
-            </iframe>
-        </div>
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
           </div>
         </div>
       </div>
