@@ -167,7 +167,7 @@ const ProposalChat = () => {
   };
 
   return (
-    <div className=" px-3 xl:px-0 py-8 lg:py-4">
+    <div className=" px-3 xl:px-0 py-14 lg:py-8">
       <div className="max-w-md mx-auto bg-white rounded-2xl shadow-2xl overflow-hidden">
         {/* Header */}
         <div className="bg-gradient-to-r from-rose-500 to-pink-500 p-4 text-white">

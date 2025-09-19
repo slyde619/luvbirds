@@ -125,98 +125,104 @@ function LoveStory() {
 
           {/* Stories Section */}
           <div className="md:w-7/12" ref={containerRef}>
-            <div className="space-y-12">
-              {stories.map((story, index) => {
-                const isInView = useInView(containerRef, { 
-                  margin: "-20% 0px -20% 0px" 
-                });
-                
-                return (
-                  <motion.div
-                    key={index}
-                    className={`rounded-2xl bg-white/80 backdrop-blur-sm ring-1 ring-slate-200/70 p-8 shadow-lg transition-all duration-500 ${
-                      currentStory === index ? 'ring-rose-200 shadow-rose-100/50' : ''
-                    }`}
-                    initial={{ opacity: 0, y: 60, scale: 0.95 }}
-                    whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                    transition={{ 
-                      duration: 0.7, 
-                      delay: index * 0.2,
-                      ease: "easeOut"
-                    }}
-                    viewport={{ once: true, margin: "-50px" }}
-                    whileHover={{ 
-                      scale: 1.02,
-                      transition: { duration: 0.2 }
-                    }}
-                  >
-                    {/* Story Header */}
-                    <motion.div 
-                      className="flex items-center gap-4 mb-6"
-                      initial={{ opacity: 0, x: -20 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      transition={{ duration: 0.5, delay: index * 0.2 + 0.3 }}
-                    >
-                      <motion.div 
-                        className="h-14 w-14 rounded-full bg-gradient-to-br from-rose-100 to-rose-200 ring-1 ring-rose-300/50 flex items-center justify-center shadow-sm"
-                        whileHover={{ rotate: 5, scale: 1.05 }}
-                        transition={{ type: "spring", stiffness: 400, damping: 17 }}
-                      >
-                        {story.icon}
-                      </motion.div>
-                      <h3 
-                        className="text-2xl md:text-3xl font-semibold tracking-tight text-slate-900"
-                        style={{ fontFamily: 'serif' }}
-                      >
-                        {story.title}
-                      </h3>
-                    </motion.div>
-                    
-                    {/* Story Content */}
-                    <div className="space-y-4">
-                      {story.content.map((paragraph, paragraphIndex) => (
-                        <motion.p 
-                          key={paragraphIndex}
-                          className="text-slate-700 leading-relaxed text-lg"
-                          initial={{ opacity: 0, y: 20 }}
-                          whileInView={{ opacity: 1, y: 0 }}
-                          transition={{ 
-                            duration: 0.8, 
-                            delay: index * 0.2 + paragraphIndex * 0.3 + 0.5,
-                            ease: "easeOut"
-                          }}
-                          viewport={{ once: true, margin: "-50px" }}
-                        >
-                          {paragraph}
-                        </motion.p>
-                      ))}
-                    </div>
-                  </motion.div>
-                );
-              })}
-            </div>
-            
-            {/* Progress Indicator */}
-            <motion.div 
-              className="mt-12 flex justify-center gap-3"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 1 }}
+            {/* Scrollable Stories Container */}
+            <div 
+              className="h-[70vh] md:h-[80vh] overflow-y-auto pr-2"
+              style={{
+                scrollbarWidth: 'thin',
+                scrollbarColor: 'rgb(244 63 94 / 0.3) transparent',
+              }}
             >
-              {stories.map((_, index) => (
-                <motion.div
-                  key={index}
-                  className={`h-3 w-3 rounded-full transition-all duration-300 ${
-                    currentStory === index 
-                      ? 'bg-rose-500 scale-125' 
-                      : 'bg-slate-300 hover:bg-slate-400'
-                  }`}
-                  whileHover={{ scale: 1.2 }}
-                  whileTap={{ scale: 0.9 }}
-                />
-              ))}
-            </motion.div>
-          </div>
+              <style jsx>{`
+                div::-webkit-scrollbar {
+                  width: 6px;
+                }
+                div::-webkit-scrollbar-track {
+                  background: transparent;
+                }
+                div::-webkit-scrollbar-thumb {
+                  background-color: rgb(244 63 94 / 0.2);
+                  border-radius: 3px;
+                  transition: background-color 0.2s ease;
+                }
+                div::-webkit-scrollbar-thumb:hover {
+                  background-color: rgb(244 63 94 / 0.4);
+                }
+              `}</style>
+              
+              <div className="space-y-12 pb-8">
+                {stories.map((story, index) => {
+                  const isInView = useInView(containerRef, { 
+                    margin: "-20% 0px -20% 0px" 
+                  });
+                  
+                  return (
+                    <motion.div
+                      key={index}
+                      className={`rounded-2xl bg-white/80 backdrop-blur-sm ring-1 ring-slate-200/70 p-6 md:p-8 shadow-lg transition-all duration-500 ${
+                        currentStory === index ? 'ring-rose-200 shadow-rose-100/50' : ''
+                      }`}
+                      initial={{ opacity: 0, y: 30, scale: 0.98 }}
+                      whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                      transition={{ 
+                        duration: 0.5, 
+                        delay: index * 0.1,
+                        ease: "easeOut"
+                      }}
+                      viewport={{ once: true, margin: "-30px" }}
+                      whileHover={{ 
+                        scale: 1.01,
+                        transition: { duration: 0.2 }
+                      }}
+                    >
+                      {/* Story Header */}
+                      <motion.div 
+                        className="flex items-center gap-4 mb-6"
+                        initial={{ opacity: 0, x: -20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.4, delay: index * 0.1 + 0.2 }}
+                      >
+                        <motion.div 
+                          className="h-12 w-12 md:h-14 md:w-14 rounded-full bg-gradient-to-br from-rose-100 to-rose-200 ring-1 ring-rose-300/50 flex items-center justify-center shadow-sm"
+                          whileHover={{ rotate: 5, scale: 1.05 }}
+                          transition={{ type: "spring", stiffness: 400, damping: 17 }}
+                        >
+                          {story.icon}
+                        </motion.div>
+                        <h3 
+                          className="text-xl md:text-2xl lg:text-3xl font-semibold tracking-tight text-slate-900"
+                          style={{ fontFamily: 'serif' }}
+                        >
+                          {story.title}
+                        </h3>
+                      </motion.div>
+                      
+                      {/* Story Content */}
+                      <div className="space-y-4">
+                        {story.content.map((paragraph, paragraphIndex) => (
+                          <motion.p 
+                            key={paragraphIndex}
+                            className="text-slate-600 lg:leading-relaxed text-base lg:text-lg"
+                            initial={{ opacity: 0, y: 10 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ 
+                              duration: 0.6, 
+                              delay: index * 0.1 + paragraphIndex * 0.1 + 0.3,
+                              ease: "easeOut"
+                            }}
+                            viewport={{ once: true, margin: "-30px" }}
+                            
+                          >
+                            {paragraph}
+                          </motion.p>
+                        ))}
+                      </div>
+                    </motion.div>
+                  );
+                })}
+              </div>
+            </div>
+        </div>
         </div>
       </div>
     </motion.section>
