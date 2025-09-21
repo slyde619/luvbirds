@@ -1,6 +1,6 @@
-import { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Heart, MessageCircle, Send } from 'lucide-react';
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Heart, MessageCircle, Send } from "lucide-react";
 
 const ProposalChat = () => {
   const [messages, setMessages] = useState([]);
@@ -9,131 +9,131 @@ const ProposalChat = () => {
   const chatMessages = [
     {
       id: 1,
-      sender: "him",
+      sender: "narrator",
       text: "Did she know? NO 🤫",
-      time: "8:32 PM"
+      time: "8:32 PM",
     },
     {
       id: 2,
-      sender: "him", 
+      sender: "narrator",
       text: "Did I know? Of course! I planned it all 🥹 with the help of our friends",
-      time: "8:32 PM"
+      time: "8:32 PM",
     },
     {
       id: 3,
-      sender: "him",
+      sender: "narrator",
       text: "As beautiful as she is, I knew the ring 💍 will be perfect on her",
-      time: "8:33 PM"
+      time: "8:33 PM",
     },
     {
       id: 4,
-      sender: "him",
+      sender: "narrator",
       text: "As almost perfect as she is, I knew I had to make haste in making her mine 🤤",
-      time: "8:33 PM"
+      time: "8:33 PM",
     },
     {
       id: 5,
       sender: "narrator",
-      text: "It was a beautiful evening, with light drizzles that sparkle and giggle while touching mother earth... ✨",
+      text: "It was a  beautiful and lovely evening, with light drizzles that sparkle and giggle while touching mother earth and all it's inhabitants. My cell phone 📱 rang , a subtle calm voice on the end whispered through.",
       time: "8:34 PM"
     },
     {
       id: 6,
       sender: "her",
       text: "Hello, good evening 😊",
-      time: "8:35 PM"
+      time: "8:35 PM",
     },
     {
       id: 7,
       sender: "him",
       text: "Hi dear good evening ❤️",
-      time: "8:35 PM"
+      time: "8:35 PM",
     },
     {
       id: 8,
       sender: "her",
       text: "Aren't you coming again? Let's meet them. It's getting late, it's drizzling and I fit sleep off ooo 😴",
-      time: "8:36 PM"
+      time: "8:36 PM",
     },
     {
       id: 9,
       sender: "him",
       text: "Don't worry, I'm coming. Rare, Kate and co are headed my way, so I want to join them 🚗",
-      time: "8:36 PM"
+      time: "8:36 PM",
     },
     {
       id: 10,
       sender: "her",
       text: "Ok, they just informed me that they are waiting for us. It's not proper to keep them waiting for too long ⏰",
-      time: "8:37 PM"
+      time: "8:37 PM",
     },
     {
       id: 11,
       sender: "him",
       text: "Wamless 😄",
-      time: "8:37 PM"
+      time: "8:37 PM",
     },
     {
       id: 12,
       sender: "narrator",
-      text: "Little did she know... everyone else knew she was about to get a ring 💍😊",
-      time: "8:38 PM"
+      text: "To her; I was to meet her friend and hubby, to have a discussion.  To every other person (her friend and hubby inclusive); She's gonna get a ring 💍😊. We arrived  earlier than we areanged. Phone rings",
+      time: "8:38 PM",
     },
     {
       id: 13,
       sender: "her",
       text: "Hello, I'm outside the place 📍",
-      time: "8:45 PM"
+      time: "8:45 PM",
     },
     {
       id: 14,
       sender: "him",
       text: "I will be with you in a moment 🏃‍♂️",
-      time: "8:45 PM"
+      time: "8:45 PM",
     },
     {
       id: 15,
       sender: "her",
       text: "This place is nice! Don't you think things here will be too expensive? 💸",
-      time: "8:50 PM"
+      time: "8:50 PM",
     },
     {
       id: 16,
       sender: "him",
       text: "Let's try sip and paint 🎨🖌️",
-      time: "8:51 PM"
+      time: "8:51 PM",
     },
     {
       id: 17,
       sender: "her",
       text: "YES! 🎉 You think you're a maestro in our art world, I will surprise you by winning! 😤",
-      time: "8:51 PM"
+      time: "8:51 PM",
     },
     {
       id: 18,
       sender: "narrator",
       text: "Surprise me? She did 🙂🙂",
-      time: "8:52 PM"
+      time: "8:52 PM",
     },
     {
       id: 19,
       sender: "narrator",
       text: "Winning me? Well that began our journey of painting a perfect world through each other's eyes...",
-      time: "8:53 PM"
+      time: "8:53 PM",
     },
     {
       id: 20,
       sender: "narrator",
       text: "...and it was sealed with a ring 💍✨💕",
-      time: "8:54 PM"
-    }
+      time: "8:54 PM",
+    },
   ];
 
   useEffect(() => {
     if (currentIndex < chatMessages.length) {
       const timer = setTimeout(() => {
-        setMessages(prev => [...prev, chatMessages[currentIndex]]);
-        setCurrentIndex(prev => prev + 1);
+        setMessages((prev) => [...prev, chatMessages[currentIndex]]);
+        setCurrentIndex((prev) => prev + 1);
       }, 1500);
 
       return () => clearTimeout(timer);
@@ -142,27 +142,27 @@ const ProposalChat = () => {
 
   const getSenderStyle = (sender) => {
     switch (sender) {
-      case 'him':
-        return 'bg-[#345237] text-white ml-auto';
-      case 'her':
-        return 'bg-gray-200 text-gray-800 mr-auto';
-      case 'narrator':
-        return 'bg-[#fdedad] rounded-sm text-black mx-auto text-center';
+      case "him":
+        return "bg-[#345237] text-white ml-auto";
+      case "her":
+        return "bg-gray-200 text-gray-800 mr-auto";
+      case "narrator":
+        return "bg-[#fdedad] rounded-sm text-black mx-auto text-center italic";
       default:
-        return 'bg-gray-200 text-gray-800';
+        return "bg-gray-200 text-gray-800";
     }
   };
 
   const getSenderName = (sender) => {
     switch (sender) {
-      case 'him':
-        return 'Him 💙';
-      case 'her':
-        return 'Her 💕';
-      case 'narrator':
-        return '✨ Story ✨';
+      case "him":
+        return "Him 💙";
+      case "her":
+        return "Her 💕";
+      case "narrator":
+        return "✨ Story ✨";
       default:
-        return '';
+        return "";
     }
   };
 
@@ -193,44 +193,53 @@ const ProposalChat = () => {
                 key={message.id}
                 initial={{ opacity: 0, y: 20, scale: 0.8 }}
                 animate={{ opacity: 1, y: 0, scale: 1 }}
-                transition={{ 
-                  duration: 0.5, 
+                transition={{
+                  duration: 0.5,
                   type: "spring",
                   stiffness: 200,
-                  damping: 20
+                  damping: 20,
                 }}
                 className="flex flex-col space-y-1"
               >
-                {message.sender !== 'narrator' && (
+                {message.sender !== "narrator" && (
                   <motion.div
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 0.2 }}
                     className={`text-xs font-medium ${
-                      message.sender === 'him' ? 'text-right text-[#0c130c]' : 'text-left text-gray-600'
+                      message.sender === "him"
+                        ? "text-right text-[#0c130c]"
+                        : "text-left text-gray-600"
                     }`}
                   >
                     {getSenderName(message.sender)}
                   </motion.div>
                 )}
-                
+
                 <motion.div
-                  className={`max-w-xs rounded-2xl px-4 py-3 ${getSenderStyle(message.sender)} ${
-                    message.sender === 'narrator' ? 'max-w-full rounded-full py-2 text-sm font-medium' : ''
+                  className={`max-w-xs rounded-2xl px-4 py-3 ${getSenderStyle(
+                    message.sender
+                  )} ${
+                    message.sender === "narrator"
+                      ? "max-w-full rounded-full py-2 text-sm font-medium"
+                      : ""
                   }`}
                   whileHover={{ scale: 1.02 }}
                   transition={{ type: "spring", stiffness: 300 }}
                 >
                   <p className="text-sm leading-relaxed">{message.text}</p>
                 </motion.div>
-                
+
                 <motion.div
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ delay: 0.3 }}
                   className={`text-xs text-gray-500 ${
-                    message.sender === 'him' ? 'text-right' : 
-                    message.sender === 'narrator' ? 'text-center' : 'text-left'
+                    message.sender === "him"
+                      ? "text-right"
+                      : message.sender === "narrator"
+                      ? "text-center"
+                      : "text-left"
                   }`}
                 >
                   {message.time}
@@ -238,7 +247,7 @@ const ProposalChat = () => {
               </motion.div>
             ))}
           </AnimatePresence>
-          
+
           {/* Typing indicator when messages are still coming */}
           {currentIndex < chatMessages.length && (
             <motion.div
@@ -273,7 +282,11 @@ const ProposalChat = () => {
           <div className="flex items-center space-x-3 bg-gray-100 rounded-full px-4 py-2">
             <input
               type="text"
-              placeholder={currentIndex >= chatMessages.length ? "Share your love story..." : "Story in progress..."}
+              placeholder={
+                currentIndex >= chatMessages.length
+                  ? "Share your love story..."
+                  : "Story in progress..."
+              }
               className="flex-1 bg-transparent outline-none text-sm"
               disabled={currentIndex < chatMessages.length}
             />
@@ -293,7 +306,9 @@ const ProposalChat = () => {
             <motion.div
               className="bg-[#EFBF04] h-1 rounded-full"
               initial={{ width: "0%" }}
-              animate={{ width: `${(currentIndex / chatMessages.length) * 100}%` }}
+              animate={{
+                width: `${(currentIndex / chatMessages.length) * 100}%`,
+              }}
               transition={{ duration: 0.5 }}
             />
           </div>
