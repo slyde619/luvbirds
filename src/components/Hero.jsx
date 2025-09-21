@@ -14,7 +14,7 @@ function Hero() {
       aria-label="Hero"
     >
       <img
-        src="https://res.cloudinary.com/dhjmedwbx/image/upload/v1758456045/court%20props/header2_gipvvu.png"
+        src="https://res.cloudinary.com/dhjmedwbx/image/upload/v1758463226/court%20props/header3_hbk0qw.png"
         alt="Enwongo and Nsisong embracing under golden light"
         className="absolute inset-0 h-full w-full object-cover object-center"
         loading="eager"
