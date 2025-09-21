@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { MessageCircle } from 'lucide-react';
 import { Sparkles } from 'lucide-react';
 
 function NavBar() {
@@ -7,14 +8,11 @@ function NavBar() {
       initial={{ y: -50, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5 }}
-      className="w-full bg-[#FDF7F9]"
+      className="w-full bg-[#fdedad]/30"
     >
-      <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between ">
+      <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-1 2xl:py-2 flex items-center justify-between ">
         <a href="#" className="inline-flex items-center gap-2 group" aria-label="Home">
-          <div className="h-8 w-8 rounded-md flex items-center justify-center bg-slate-900/90 text-white">
-            <span className="text-[12px] tracking-tight font-medium">EN</span>
-          </div>
-          <span className="text-sm text-slate-700 group-hover:text-slate-900 transition-colors">Enwongo ye Nsisong</span>
+          <img className='size-18' src="https://res.cloudinary.com/dhjmedwbx/image/upload/v1758458239/court%20props/N_20250723_233523_0000-removebg-preview_awsqfh.png" alt="Couple Logo" />
         </a>
         <div className="hidden md:flex items-center gap-6 text-sm">
           {['Story', 'Gallery', 'Details'].map((item) => (
@@ -26,12 +24,12 @@ function NavBar() {
               {item}
             </a>
           ))}
-          <a
-            href="#rsvp"
-            className="inline-flex items-center gap-2 rounded-full px-4 py-2 bg-gradient-to-tr from-rose-200/70 to-amber-100/70 hover:from-rose-200 hover:to-amber-100 text-slate-900 shadow-sm hover:shadow ring-1 ring-rose-200/60 hover:ring-rose-300 transition-all"
-          >
-            <Sparkles size={16} />RSVP
-          </a>
+         <a
+                href="#rsvp"
+                className="inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-medium bg-gradient-to-tr from-[#2B432D] to-[#0c130c] hover:from-[#345237] hover:to-[#598b5d] text-slate-200 shadow-lg shadow-black/10 ring-1 ring-white/30 hover:ring-white/50 transition-all"
+              >
+                <MessageCircle size={16} color="#ebf2ec" /> Goodwill Message
+              </a>
         </div>
       </nav>
     </motion.header>

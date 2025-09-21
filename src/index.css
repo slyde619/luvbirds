@@ -1,5 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=MonteCarlo&display=swap');
+
 @import "tailwindcss";
 
 html{
     scroll-behavior: smooth;
+}
+
+@theme {
+    --font-monte: "MonteCarlo", cursive;
+}
+
+
+/* Add to your global CSS or component styles */
+.overflow-y-auto::-webkit-scrollbar {
+  width: 4px;
+}
+
+.overflow-y-auto::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.overflow-y-auto::-webkit-scrollbar-thumb {
+  background: #598b5d;
+  /* opacity: 0.5; */
+  border-radius: 2px;
+}
+
+.overflow-y-auto::-webkit-scrollbar-thumb:hover {
+  background: #333;
 }

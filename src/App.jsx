@@ -17,8 +17,8 @@ function App() {
       <Countdown />
       <main>
         <LoveStory />
-        <Gallery />
         <ProposalChat />
+        <Gallery />
         <EventDetails />
         <GoodwillMessage />
       </main>

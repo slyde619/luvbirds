@@ -4,11 +4,12 @@ import { motion } from 'framer-motion';
 function Gallery() {
   const [index, setIndex] = useState(0);
   const slides = [
-    { src: 'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=1920&auto=format&fit=crop', alt: 'Couple holding hands in a field' },
-    { src: 'https://images.unsplash.com/photo-1621619856624-42fd193a0661?w=1080&q=80', alt: 'Romantic walk at sunset' },
-    { src: 'https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1920&auto=format&fit=crop', alt: 'Laughing together in the city' },
-    { src: 'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=1920&auto=format&fit=crop', alt: 'Engagement celebration' },
-    { src: 'https://images.unsplash.com/photo-1642615835477-d303d7dc9ee9?w=1080&q=80', alt: 'Beach moment' },
+    { src: 'https://res.cloudinary.com/dhjmedwbx/image/upload/v1758454917/court%20props/IMG_0221_k81nkh.jpg', alt: 'Couple holding hands in a field' },
+    { src: 'https://res.cloudinary.com/dhjmedwbx/image/upload/v1758454924/court%20props/IMG_0160_eqnqau.jpg', alt: 'Romantic walk at sunset' },
+    { src: 'https://res.cloudinary.com/dhjmedwbx/image/upload/v1758454976/court%20props/IMG_0147_n5ncyh.jpg', alt: 'Laughing together in the city' },
+    { src: 'https://res.cloudinary.com/dhjmedwbx/image/upload/v1758454982/court%20props/IMG_0157_uglyyw.jpg', alt: 'Engagement celebration' },
+    { src: 'https://res.cloudinary.com/dhjmedwbx/image/upload/v1758454988/court%20props/IMG_0150_shyel9.jpg', alt: 'Beach moment' },
+    { src: 'https://res.cloudinary.com/dhjmedwbx/image/upload/v1758454985/court%20props/IMG_0245_k8k0wx.jpg', alt: 'Beach moment' }
   ];
 
   useEffect(() => {
@@ -27,14 +28,14 @@ function Gallery() {
       transition={{ duration: 0.7 }}
       viewport={{ once: true }}
       id="gallery"
-      className="relative"
+      className="relative bg-white pb-20"
       aria-label="Photo Gallery"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-16 md:pt-20">
         <div className="flex items-end justify-between">
           <div>
-            <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-slate-900 font-playfair">
-              Moments We Treasure
+            <h2 className="text-3xl md:text-4xl text-slate-900 font-semibold font-monte">
+              Moments From Court Marraige
             </h2>
             <p className="mt-2 text-slate-600 text-sm">A glimpse into our journey.</p>
           </div>
@@ -88,7 +89,7 @@ function Gallery() {
               <button
                 key={i}
                 onClick={() => goTo(i)}
-                className={`h-2.5 w-2.5 rounded-full ${index === i ? 'bg-rose-400' : 'bg-slate-300 hover:bg-slate-400'} transition-colors`}
+                className={`h-2.5 w-2.5 rounded-full ${index === i ? 'bg-[#EFBF04]' : 'bg-slate-300 hover:bg-slate-400'} transition-colors`}
                 aria-label={`Slide ${i + 1}`}
               ></button>
             ))}

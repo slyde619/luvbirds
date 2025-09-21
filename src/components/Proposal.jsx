@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Heart, MessageCircle, Send } from 'lucide-react';
 
@@ -143,11 +143,11 @@ const ProposalChat = () => {
   const getSenderStyle = (sender) => {
     switch (sender) {
       case 'him':
-        return 'bg-rose-500 text-white ml-auto';
+        return 'bg-[#345237] text-white ml-auto';
       case 'her':
         return 'bg-gray-200 text-gray-800 mr-auto';
       case 'narrator':
-        return 'bg-gradient-to-r from-pink-500 to-rose-500 text-white mx-auto text-center';
+        return 'bg-[#fdedad] rounded-sm text-black mx-auto text-center';
       default:
         return 'bg-gray-200 text-gray-800';
     }
@@ -167,10 +167,10 @@ const ProposalChat = () => {
   };
 
   return (
-    <div className=" px-3 xl:px-0 py-14 lg:py-8">
+    <div className=" px-3 xl:px-0 py-14 lg:py-8 bg-[#fefaea]">
       <div className="max-w-md mx-auto bg-white rounded-2xl shadow-2xl overflow-hidden">
         {/* Header */}
-        <div className="bg-gradient-to-r from-rose-500 to-pink-500 p-4 text-white">
+        <div className="bg-gradient-to-r from-[#0c130c] to-[#345237] p-4 text-white">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-3">
               <div className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center">
@@ -186,7 +186,7 @@ const ProposalChat = () => {
         </div>
 
         {/* Chat Messages */}
-        <div className="h-96 overflow-y-auto p-4 space-y-4">
+        <div className="h-96 overflow-y-auto p-4 space-y-4 scrollbar-thin scrollbar-thumb-black scrollbar-track-transparent">
           <AnimatePresence>
             {messages.map((message) => (
               <motion.div
@@ -207,7 +207,7 @@ const ProposalChat = () => {
                     animate={{ opacity: 1 }}
                     transition={{ delay: 0.2 }}
                     className={`text-xs font-medium ${
-                      message.sender === 'him' ? 'text-right text-rose-600' : 'text-left text-gray-600'
+                      message.sender === 'him' ? 'text-right text-[#0c130c]' : 'text-left text-gray-600'
                     }`}
                   >
                     {getSenderName(message.sender)}
@@ -248,17 +248,17 @@ const ProposalChat = () => {
             >
               <div className="flex space-x-1">
                 <motion.div
-                  className="w-2 h-2 bg-rose-500 rounded-full"
+                  className="w-2 h-2 bg-[#EFBF04] rounded-full"
                   animate={{ scale: [1, 1.2, 1] }}
                   transition={{ duration: 1, repeat: Infinity, delay: 0 }}
                 />
                 <motion.div
-                  className="w-2 h-2 bg-rose-500 rounded-full"
+                  className="w-2 h-2 bg-[#EFBF04] rounded-full"
                   animate={{ scale: [1, 1.2, 1] }}
                   transition={{ duration: 1, repeat: Infinity, delay: 0.2 }}
                 />
                 <motion.div
-                  className="w-2 h-2 bg-rose-500 rounded-full"
+                  className="w-2 h-2 bg-[#EFBF04] rounded-full"
                   animate={{ scale: [1, 1.2, 1] }}
                   transition={{ duration: 1, repeat: Infinity, delay: 0.4 }}
                 />
@@ -280,7 +280,7 @@ const ProposalChat = () => {
             <motion.button
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
-              className="w-8 h-8 bg-rose-500 rounded-full flex items-center justify-center text-white"
+              className="w-8 h-8 bg-[#EFBF04] rounded-full flex items-center justify-center text-white"
             >
               <Send className="w-4 h-4" />
             </motion.button>
@@ -291,7 +291,7 @@ const ProposalChat = () => {
         <div className="px-4 pb-2">
           <div className="w-full bg-gray-200 rounded-full h-1">
             <motion.div
-              className="bg-gradient-to-r from-rose-500 to-pink-500 h-1 rounded-full"
+              className="bg-[#EFBF04] h-1 rounded-full"
               initial={{ width: "0%" }}
               animate={{ width: `${(currentIndex / chatMessages.length) * 100}%` }}
               transition={{ duration: 0.5 }}

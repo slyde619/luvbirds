@@ -39,7 +39,7 @@ function Countdown() {
         <div className="rounded-2xl bg-white/70 backdrop-blur-md ring-1 ring-slate-200/70 shadow-sm p-5 sm:p-6 md:p-8">
           <div className="flex flex-col items-center md:flex-row md:items-end md:justify-between gap-6">
             <div className="text-center md:text-left">
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight text-slate-900 font-playfair">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-[#02022a] font-monte">
                 The Countdown
               </h2>
               <p className="mt-1 text-slate-600 text-sm">Until we say “I do.”</p>
@@ -48,7 +48,7 @@ function Countdown() {
               {['days', 'hours', 'mins', 'secs'].map((unit) => (
                 <motion.div
                   key={unit}
-                  className="rounded-xl bg-gradient-to-br from-rose-50 to-amber-50 ring-1 ring-rose-100/60 p-4 text-center"
+                  className="rounded-xl bg-gradient-to-br from-[#fdedad] to-[#fdedd2] p-4 text-center"
                   animate={time[unit] !== time.prev?.[unit] ? { scale: 1.1, opacity: 0.9 } : {}}
                   transition={{ duration: 0.18 }}
                 >

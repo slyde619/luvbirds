@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { MessageCircle } from "lucide-react";
 import { Sparkles } from "lucide-react";
 import { ClockArrowDown } from "lucide-react";
 import { Send } from "lucide-react";
@@ -13,7 +14,7 @@ function Hero() {
       aria-label="Hero"
     >
       <img
-        src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=1920&auto=format&fit=crop"
+        src="https://res.cloudinary.com/dhjmedwbx/image/upload/v1758456045/court%20props/header2_gipvvu.png"
         alt="Enwongo and Nsisong embracing under golden light"
         className="absolute inset-0 h-full w-full object-cover object-center"
         loading="eager"
@@ -28,21 +29,21 @@ function Hero() {
             transition={{ duration: 0.7, ease: "easeOut" }}
             className="max-w-2xl text-white"
           >
-            <p className="uppercase tracking-[0.2em] text-xs sm:text-sm text-rose-100/90">
+            <p className="uppercase tracking-[0.2em] text-xs sm:text-sm text-[#345237]">
               A celebration of love
             </p>
-            <h1 className="mt-3 text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold tracking-tight font-playfair">
-              Enwongo <span className="text-rose-200">&</span> Nsisong
+            <h1 className="mt-3 text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold font-monte">
+              Enwongo <span className="text-[#fbd43c]">&</span> Nsisong
             </h1>
-            <p className="mt-4 text-base sm:text-lg md:text-xl text-rose-100/95">
+            <p className="mt-4 text-base sm:text-lg md:text-xl text-[#fbd43c]">
               September 27, 2025 — 12:00 PM
             </p>
             <div className="mt-8 flex items-center gap-3">
               <a
                 href="#rsvp"
-                className="inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-medium bg-gradient-to-tr from-rose-300/90 to-amber-200/90 hover:from-rose-300 hover:to-amber-200 text-slate-900 shadow-lg shadow-black/10 ring-1 ring-white/30 hover:ring-white/50 transition-all"
+                className="inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-medium bg-gradient-to-tr from-[#2B432D] to-[#0c130c] hover:from-[#345237] hover:to-[#598b5d] text-slate-200 shadow-lg shadow-black/10 ring-1 ring-white/30 hover:ring-white/50 transition-all"
               >
-                <Sparkles size={16} /> RSVP Now
+                <MessageCircle size={16} color="#ebf2ec" /> Goodwill Message
               </a>
               <a
                 href="#countdown"

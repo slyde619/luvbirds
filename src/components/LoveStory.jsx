@@ -24,7 +24,7 @@ function LoveStory() {
           strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
-          className="text-rose-500"
+          className="text-[#EAAC31]"
         >
           <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
         </svg>
@@ -37,7 +37,7 @@ function LoveStory() {
     },
     {
       title: "Our First Date",
-      icon: <Sparkles className="text-rose-500" />,
+      icon: <Sparkles className="text-[#EAAC31]" />,
       content: [
         "He fixed a date for us to meet on 1st May, 2025 and that was a game changer. We met again for the second time in 6 years, and I must say, it was love at second sight indeed.. The spark was undeniable and when he finally asked me out, I already knew I would give him a chance.",
         "Truly, love has a way of finding it's way back at the end. I do not like to rush into things but with him it was why delay what is actually meant to be. I must say it's been an amazing 5 months with him, 5 months of love. 6 Years ago, we were just random strangers who just met once, 5 months ago, we became acquaintance, 5 Months down the line, we are lovers, and soon going to do forever... Most times we find love in the most unexpected ways and I'm glad I would be doing this life journey with my lover."
@@ -59,7 +59,7 @@ function LoveStory() {
       transition={{ duration: 0.8, ease: "easeOut" }}
       viewport={{ once: true, margin: "-100px" }}
       id="story"
-      className="relative min-h-screen bg-gradient-to-b from-rose-50/30 to-white"
+      className="relative min-h-screen bg-[#fefaea]"
       aria-label="Our Love Story"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-16 md:pt-20">
@@ -67,8 +67,7 @@ function LoveStory() {
           {/* Header Section */}
           <div className="md:w-5/12 text-center md:text-left">
             <motion.h2 
-              className="text-4xl md:text-5xl font-bold tracking-tight text-slate-900"
-              style={{ fontFamily: 'serif' }}
+              className="text-4xl md:text-5xl font-semibold text-[#02022a] font-monte"
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
@@ -76,7 +75,7 @@ function LoveStory() {
               Our Love Story
             </motion.h2>
             <motion.p 
-              className="mt-4 text-lg text-slate-600"
+              className="mt-4 text-md text-slate-600"
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
@@ -96,7 +95,7 @@ function LoveStory() {
                 height="36"
                 viewBox="0 0 130 36"
                 fill="none"
-                className="text-rose-400"
+                className="text-[#fbd43c]"
               >
                 <motion.path
                   initial={{ pathLength: 0 }}
@@ -130,7 +129,7 @@ function LoveStory() {
               className="h-[70vh] md:h-[80vh] overflow-y-auto pr-2"
               style={{
                 scrollbarWidth: 'thin',
-                scrollbarColor: 'rgb(244 63 94 / 0.3) transparent',
+                scrollbarColor: '#2B432D transparent',
               }}
             >
               <style jsx>{`
@@ -183,7 +182,7 @@ function LoveStory() {
                         transition={{ duration: 0.4, delay: index * 0.1 + 0.2 }}
                       >
                         <motion.div 
-                          className="h-12 w-12 md:h-14 md:w-14 rounded-full bg-gradient-to-br from-rose-100 to-rose-200 ring-1 ring-rose-300/50 flex items-center justify-center shadow-sm"
+                          className="h-12 w-12 md:h-14 md:w-14 rounded-full bg-[#fefaea] flex items-center justify-center shadow-sm"
                           whileHover={{ rotate: 5, scale: 1.05 }}
                           transition={{ type: "spring", stiffness: 400, damping: 17 }}
                         >
@@ -191,7 +190,6 @@ function LoveStory() {
                         </motion.div>
                         <h3 
                           className="text-xl md:text-2xl lg:text-3xl font-semibold tracking-tight text-slate-900"
-                          style={{ fontFamily: 'serif' }}
                         >
                           {story.title}
                         </h3>
@@ -202,7 +200,7 @@ function LoveStory() {
                         {story.content.map((paragraph, paragraphIndex) => (
                           <motion.p 
                             key={paragraphIndex}
-                            className="text-slate-600 lg:leading-relaxed text-base lg:text-lg"
+                            className="text-slate-600 lg:leading-relaxed text-base lg:text-lg font-normal"
                             initial={{ opacity: 0, y: 10 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ 

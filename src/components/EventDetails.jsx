@@ -11,13 +11,13 @@ function EventDetails() {
       transition={{ duration: 0.7 }}
       viewport={{ once: true }}
       id="details"
-      className="relative"
+      className="relative bg-[#fefaea]"
       aria-label="Event Details and Map"
     >
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-16 md:pt-20 pb-2">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-16 md:pt-20 pb-2 bg-[#fefaea]">
         <div className="grid grid-col-1 md:grid-cols-2 gap-8 items-start">
           <div className="space-y-4">
-            <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-slate-900 font-playfair">
+            <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-slate-900 font-monte">
               Event Details
             </h2>
             <div className="rounded-xl bg-white ring-1 ring-slate-200/70 p-5 shadow-sm">
@@ -34,7 +34,7 @@ function EventDetails() {
                   title: "Parking & Directions",
                   color: "rose",
                   content:
-                    "Complimentary valet available at the main entrance. Nearby street parking after 6 PM.",
+                    "Protocol Team will be available for any assistance needed.",
                 },
                 {
                   icon: <Gift className="w-5 h-5" />,
@@ -46,9 +46,9 @@ function EventDetails() {
               ].map((item, i) => (
                 <div
                   key={i}
-                  className="flex flex-col md:flex-row border-b border-b-rose-100 pb-1 items-center gap-4 mb-4 last:mb-0"
+                  className="flex flex-col md:flex-row border-b border-[#fdedad] pb-1 items-center gap-4 mb-4 last:mb-0"
                 >
-                  <span className="w-12 h-12 rounded-full bg-rose-200/30 flex items-center justify-center">
+                  <span className="w-12 h-12 rounded-full bg-[#fdedad] flex items-center justify-center">
                     {item.icon}
                   </span>
                   <div>
@@ -62,10 +62,9 @@ function EventDetails() {
                 </div>
               ))}
             </div>
-            <div className="rounded-xl bg-gradient-to-br from-rose-50 to-amber-50 ring-1 ring-rose-100/60 p-4">
+            <div className="rounded-xl bg-[#fdedad] p-4">
               <p className="text-sm text-slate-700">
-                Dress code: Garden Formal. Please arrive 20 minutes early to be
-                seated comfortably.
+                Dress code: Green, Gold, Sky-blue, and white.
               </p>
             </div>
           </div>

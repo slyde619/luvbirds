@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Sparkle } from "lucide-react";
+import { MessageCircle } from "lucide-react";
 
 function GoodwillMessage() {
   const [formData, setFormData] = useState({ name: "", message: "" });
@@ -39,14 +40,14 @@ function GoodwillMessage() {
         transition={{ duration: 0.7 }}
         viewport={{ once: true }}
         id="rsvp"
-        className="relative"
+        className="relative bg-[#fdedad]"
         aria-label="Goodwill Message"
       >
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 pt-16 md:pt-20 pb-20">
           <div className="rounded-2xl bg-white ring-1 ring-slate-200/70 shadow-sm p-6 sm:p-8">
             <div className="flex items-start justify-between">
               <div>
-                <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-slate-900 font-playfair">
+                <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-slate-900 font-monte">
                   Goodwill Message
                 </h2>
                 <p className="mt-2 text-slate-600 text-sm">
@@ -101,35 +102,11 @@ function GoodwillMessage() {
               </p>
               <div className="pt-2">
                 <button
+                  href="#rsvp"
                   onClick={handleSubmit}
-                  className="inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-medium bg-gradient-to-tr from-rose-300 to-amber-200 hover:from-rose-300/90 hover:to-amber-200/90 text-slate-900 shadow-lg shadow-rose-200/40 ring-1 ring-rose-200 hover:ring-rose-300 transition-all cursor-pointer"
+                  className="inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-medium bg-gradient-to-tr from-[#2B432D] to-[#0c130c] hover:from-[#345237] hover:to-[#598b5d] text-slate-200 shadow-lg shadow-black/10 ring-1 ring-white/30 hover:ring-white/50 transition-all"
                 >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    class="lucide lucide-send-icon lucide-send"
-                  >
-                    <motion.path
-                      initial={{ pathLength: 0 }}
-                      whileInView={{ pathLength: 1 }}
-                      transition={{ duration: 1.5, ease: "easeInOut" }}
-                      d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z"
-                    />
-                    <motion.path
-                      initial={{ pathLength: 0 }}
-                      whileInView={{ pathLength: 1 }}
-                      transition={{ duration: 1.5, ease: "easeInOut" }}
-                      d="m21.854 2.147-10.94 10.939"
-                    />
-                  </svg>{" "}
-                  Send Message
+                  <MessageCircle size={16} color="#ebf2ec" /> Goodwill Message
                 </button>
               </div>
             </div>
