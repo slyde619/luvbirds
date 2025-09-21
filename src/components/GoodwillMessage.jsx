@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Sparkle } from "lucide-react";
+// import { Sparkle } from "lucide-react";
 import { MessageCircle } from "lucide-react";
+import { Send } from "lucide-react";
 
 function GoodwillMessage() {
   const [formData, setFormData] = useState({ name: "", message: "" });
@@ -106,7 +107,7 @@ function GoodwillMessage() {
                   onClick={handleSubmit}
                   className="inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-medium bg-gradient-to-tr from-[#2B432D] to-[#0c130c] hover:from-[#345237] hover:to-[#598b5d] text-slate-200 shadow-lg shadow-black/10 ring-1 ring-white/30 hover:ring-white/50 transition-all"
                 >
-                  <MessageCircle size={16} color="#ebf2ec" /> Goodwill Message
+                  <Send size={16} color="#ebf2ec" /> Send
                 </button>
               </div>
             </div>

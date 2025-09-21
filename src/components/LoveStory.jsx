@@ -30,17 +30,17 @@ function LoveStory() {
         </svg>
       ),
       content: [
-        "Every love journey comes with a story and ours isn't the conventional kind of story. We first cross paths in 2019 in the most unexpected way. I had arrived at his school (AKSU) for a quiz competition and little did I know I would meet the man that will capture my heart years later. We were in the same department and as the vice president of the department, he was one of the organizers of the interschool competition.",
-        "After the event, we had a little chit chat and exchanged contacts.. (We just friendzone each other and turn to status viewers till I lost his contact). Fast forward to six years later, I had completely forgotten about him even though we were still friends on Facebook. He had earlier reached out to my best friend in March to confirm if I was single and she tally meant to be.",
-        "I must say it's been an amazing 5 months with him, 5 months of love. 6 Years ago, we were just random strangers who just met once, 5 months ago, we became acquaintance, 5 Months down the line, we are lovers, and soon going to do forever... Most times we find love in the most unexpected ways and I'm glad I would be doing this life journey with my lover"
+        "Every love journey comes with a story and ours isn't the conventional kind of story. We first cross paths in 2019 in the most unexpected way. I had arrived at his school ( AKSU) for a quiz competition and little did I know I would meet the man that will capture my heart years later. We were in the same department and as the vice president of the department, he was one of the organizers of the interschool competition. \n After the event, we had a little chit chat and exchanged contacts.. \n ( We just friendzone each other and turn to status viewers till I lost his contact).",
+        "Fast forward to six years later, I had completely forgotten about him even though we were still friends on Facebook. He had earlier reached out to my best friend in March to confirm if I was single and she told him in the affirmation. Boom, oga started chatting like every day to check up on me. \nI was just enjoying the attention not knowing I was going to grow fonds of his attention.",
+        "Every day I was looking forward to seeing his calls or at least his chat and oga didn't fail even 1 day to reach out. During our daily conversation, we talked about everything and nothing and I found myself looking forward to talking to him. Soothing to say,he had already ticked almost all the boxes of my kind of man."
       ]
     },
     {
       title: "Our First Date",
       icon: <Sparkles className="text-[#EAAC31]" />,
       content: [
-        "He fixed a date for us to meet on 1st May, 2025 and that was a game changer. We met again for the second time in 6 years, and I must say, it was love at second sight indeed.. The spark was undeniable and when he finally asked me out, I already knew I would give him a chance.",
-        "Truly, love has a way of finding it's way back at the end. I do not like to rush into things but with him it was why delay what is actually meant to be. I must say it's been an amazing 5 months with him, 5 months of love. 6 Years ago, we were just random strangers who just met once, 5 months ago, we became acquaintance, 5 Months down the line, we are lovers, and soon going to do forever... Most times we find love in the most unexpected ways and I'm glad I would be doing this life journey with my lover."
+        "He fixed a date for us to meet on 1st May, 2025 and that was a game changer. We met again for the second time in 6 years, and I must say, it was love at second sight indeed.. The spark was undeniable and when he finally asked me out, I already knew I would give him a chance. Truly, love has a way of finding it's way back at the end.",
+        "I do not like to rush into things but with him it was why delay what is actually meant to be. I must say it's been an amazing 5 months with him, 5 months of love. 6 Years ago, we were just random strangers who just met once, 5 months ago, we became acquaintance, 5 Months down the line, we are lovers, and soon going to do forever... Most times we find love in the most unexpected ways and I'm glad  I would be doing this life journey with my lover."
       ]
     }
   ];
